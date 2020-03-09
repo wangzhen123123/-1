@@ -1,0 +1,210 @@
+.banner1{
+    max-width: 100%;
+}
+.banner1 img{
+    max-width: 100%;
+}
+/*  */
+.introduction{
+    width: 100%;
+}
+.introduction .content{
+    width: 1200px;
+    margin: 0 auto;
+}
+.title1{
+    text-align: center;
+    padding: 3% 0;
+}
+.title1>h1{
+    /* margin: 0 auto; */
+    font-weight: normal;
+    font-size: 24px;
+    color: #040000;
+    display: inline-block;
+    position: relative;
+}
+.title1>p{
+    font-size: 16px;
+    color: #888;
+    margin: 5px 0;
+    text-indent: 0;
+}
+.title1>p:last-child{
+    font-size: 12px;
+}
+.title1>h1>span{
+    width: 8px;
+    height: 8px;
+    border: solid 1px #b20000;
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    left: -15px;
+}
+.text4{
+    padding: 30px 0;
+}
+.text4 p{
+    line-height: 36px;
+    font-size: 14px;
+    text-indent: 2em;
+}
+.culture{
+    width: 100%;
+    padding: 30px 0;
+}
+.culture .content{
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.cul_left ,.cul_left {
+    float: left;
+}
+.cul_left{
+    width: 60%;
+}
+.cul_left img{
+    max-width: 100%;
+}
+.cul_right{
+    width: auto;
+}
+.cul_right li{
+margin-bottom: 30px;
+font-size: 14px;
+}
+/*  */
+.memorabilia{
+    width: 100%;
+    /* height: 500px; */
+    overflow: hidden;
+    background-size: cover;
+    background: url(../img/chronicle_bg.jpg) no-repeat center center;
+}
+.memorabilia .content{
+    width: 1200px;
+    margin: 0 auto;overflow: hidden;
+}
+.btn{
+    width: 122px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.btn img{
+    margin-right: 15px;
+}
+.btn .btn_left , .btn .btn_right{
+    float: left;
+}
+.btn .btn_left{
+    width: 60px;
+    height: 60px;
+    background: url(../img/chronicle_left.png) no-repeat center center;
+
+}
+.btn .btn_left_hov{
+    background: url(../img/btnleft.png) no-repeat center center;
+}
+.btn .btn_right_hov{
+  background: url(../img/btnright.png) no-repeat center center;
+}
+.btn .btn_right{
+    width: 60px;
+    height: 60px;
+    background: url(../img/chronicle_right.png) no-repeat center center;
+
+}
+.text p:nth-child(1){
+    font-size: 35px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.text p:nth-child(2){
+font-size: 20px;
+color: #fff;
+text-align: center;
+}
+.memorabilia .text{
+    /* width: 1130px; */
+    width: auto;
+}
+.year {
+    overflow: hidden;
+    background: url(../img/year_bg.png)no-repeat;
+    padding-bottom: 20px;
+}
+.year .yidong {
+    position: relative;
+    /* left: 0; */
+    margin-top: 10px;
+    width: 2160px;
+    min-height: 25px;
+    /* right: 0; */
+}
+
+.year ul li{
+    float: left;
+    margin-right: 64px;
+    width: 116px;
+    text-align: center;
+    color: rgba(255,255,255,0.8);
+    font-size: 24px;
+    margin-top: 50px;
+}
+.year ul li.cur{
+    font-size: 32px;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+}
+.year ul li.cur::after{
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    width: 30px;
+    height: 48px;
+    background: url(../img/year_cur.png) no-repeat;
+    margin-left: -15px;
+}
+/*  */
+.honor{
+    width: 100%;
+}
+.honor .content{
+    position: relative;
+    overflow: hidden;
+    width: 1200px;
+    margin: 0 auto;
+}
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+    background-image: url(../img/honor_leftbtn.png);
+    left: 60px;
+    width: 50px;
+    height: 50px;
+    right: auto;
+}
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+    background-image: url(../img/honor_rightBtn.png);
+    right: 60px;
+    left: auto;
+    width: 50px;
+    height: 50px;
+}
+.wenzi{
+    margin-top: 20px;
+    background-color: #adaba8;
+    height: 120px;
+}
+.wenzi p{
+    color: #000;
+    text-align: center;
+}
+.swip_img img{
+max-width:  100%;
+height: 300px;
+}

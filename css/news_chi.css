@@ -1,0 +1,171 @@
+.info{
+    width: 100%;
+    background-color: #f5f5f5;
+}
+.info .content{
+    width: 1200px;
+    margin: 0 auto;
+}
+.text{
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 30px;
+}
+.text p{
+    text-align: center;
+    line-height: 36px;
+}
+.shops {
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+.shops .dec{
+    float: left;
+    width: 380px;
+    height: 205px;
+background-color: #fff;
+padding: 40px 45px 0 30px;
+margin-right: 2%;
+}
+.shops .dec:last-child{
+    margin-right: 0;
+}
+.shops .dec h4{
+    font-size: 18px;
+    font-weight: normal;
+    border-bottom: 1px solid #b20000;
+    padding-bottom: 5px;
+    display: inline-block;
+    margin-bottom: 18px;
+}
+.shops .dec p{
+    line-height: 30px;
+    font-size: 14px;
+    color: #666;
+    padding-left: 15px;
+    background: url(../img/decList_icon1.png) no-repeat left 10px;
+}
+.shops .dec address{
+    line-height: 30px;
+    font-size: 14px;
+    color: #666;
+    padding-left: 15px;
+    background: url(../img/decList_icon2.png) no-repeat left 10px;
+}
+.lnubo{
+    width: 1200px;
+    margin: 0 auto ;
+    overflow: hidden;
+}
+.swiper-container1{
+    width: 1200px;
+    margin: 0 auto;
+}
+.swiper-container1 img{
+    width: 100%;
+}
+.swip img{
+    max-width: 100%;
+}
+.swip img .swiper-slide {
+    width: 1000px;
+    overflow: hidden;
+}
+.swip img .swiper-slide img{
+    width: 100%;
+}
+#gallery{
+    background-color: #f5f5f5;
+    width: 900px;
+}
+#gallery img{
+    width: 100%;
+
+}
+.swiper-button-nex1t.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+    opacity: 1;
+    cursor: auto;
+    pointer-events: none;
+}
+.swiper-button-next1{
+    opacity: 1.35;
+    cursor: auto;
+    pointer-events: none;
+}
+.swiper-button-prev1 {
+    background-image: url(../img/honor_leftbtn.png);
+    left: 60px;
+    right: auto;
+}
+.swbg{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border:  1.5px solid #b20000;
+    display: none;
+}
+.swiper-slide.swiper-slide-active .swbg{
+    display: block;
+}
+.swbg p{
+    height: 20px;
+    width: 40px;
+    left: 50%;
+    margin-left: -20px;
+  color: #fff;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+}
+@media screen and (max-width:1168px){
+    .info .content {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .nav2 .content ul li {
+        position: relative;
+        float: left;
+        margin-bottom: 20px;
+    }
+    .lnubo {
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .swip img .swiper-slide {
+        width: 100%;
+        overflow: hidden;
+    }
+    .swiper-container1 {
+        width:100%;
+        margin: 0 auto;
+    }
+    .swiper-slide img {
+        height: auto;
+    }
+    .me_ul{
+        width: 71%;
+    }
+    #gallery {
+        background-color: #f5f5f5;
+        width: 100%;
+    }
+    .shops {
+        overflow: hidden;
+        padding-bottom: 50px;
+        width: 100%;
+    }
+    .shops .dec {
+        float: left;
+        width: 100%;
+        height: 205px;
+        background-color: #fff;
+        padding: 10% 10%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+    }
+}

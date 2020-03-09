@@ -1,0 +1,26 @@
+@media screen and (max-width:1168px){
+    .introduction .content {
+        width: 100%;
+        padding: 0px 30px;
+        margin: 0 auto;
+    }
+    .inform img{
+        width: 100%;
+    }
+    .culture .content {
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .memorabilia .content {
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .honor .content {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        margin: 0 auto;
+    }
+}

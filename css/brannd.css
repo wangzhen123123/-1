@@ -1,0 +1,102 @@
+.modula{
+   padding-top: 130px;
+    width: 100%;
+    background: url(../img/brand.jpg) no-repeat center center;
+}
+.content{
+    width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.one{
+    overflow: hidden;
+    margin-right:2%;
+    margin-bottom: 2%;
+        position: relative;
+        float: left;
+        width: 32%;
+        /* height: 260px; */
+
+   
+}
+
+.one a img{
+    height: 271.5px;
+}
+.one a{
+    height: 271.5px;
+    overflow: hidden;
+}
+.three_hov{
+    margin-right: 0;
+}
+.six_hov{
+    margin-right: 0;
+}
+.bg_img{
+    position: absolute;
+    top: 30%;
+    left: 28%;
+  
+   
+}
+.bg_img img{
+    /* height: 120px; */
+    display: table-cell;
+    vertical-align: middle;
+    text-align: ceter;
+    width: 181px;
+}
+
+.but {
+    width: 167px;
+    height: 49px;
+    border: 1px solid #fff;
+    position: absolute;
+    top: 50%;
+    margin-top: 52.5px;
+    left: 50%;
+    margin-left: -83.5px;
+    text-align: center;
+    line-height: 49px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+@media screen and (max-width:1168px){
+    .content {
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .one a img {
+        height: auto;
+    }
+    .bg_img {
+        position: absolute;
+        top: 30%;
+        left: 28%;
+    }
+    .bg_img img {
+        /* height: 120px; */
+        display: table-cell;
+        vertical-align: middle;
+        text-align: ceter;
+        width: 50px;
+    }
+    .but {
+        width: 114px;
+        height: 27px;
+        border: 1px solid #fff;
+        position: absolute;
+        top: 50%;
+        margin-top: -4.5px;
+        left: 50%;
+        margin-left: -57px;
+        text-align: center;
+        line-height: 27px;
+        color: #fff;
+        /* font-weight: bold; */
+        font-size: 8px;
+    }
+}

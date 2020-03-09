@@ -1,0 +1,25 @@
+.next::before{
+    content: '';
+    width: 19px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+right:35%;
+    background: url(../img/news_prev.png) no-repeat;
+}
+.next::after{
+    content: '';
+    width: 19px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+  
+left: 29%;
+    background: url(../img/news_next.png) no-repeat;
+}
+.content .news_chi .news_text .img_ .move .rot1 {
+    background-color: #b20000 !important;
+    color: #fff !important;
+}

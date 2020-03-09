@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/swiper.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/index_style.css">
+    <!-- <link rel="stylesheet" href="../css/approach.css"> -->
+    <!-- <link rel="stylesheet" href="../css/approach_style.css"> -->
+    <link rel="stylesheet" href="../css/food.css">
+    <link rel="stylesheet" href="../css/join.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <script src="../js/swiper.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <nav>
+        <div class="logo"><img src="../img/logo.png"></div>
+        <ul class="nav_menu">
+            <li><a href="../index.html"><span>首页</span><span class="hov">首页</span></a></li>
+        <li><a href="../html/approach.html"><span>走进青年</span><span class="hov">走进青年</span></a></li>
+        <li><a href="../html/food.html"><span>青年美食</span><span class="hov">青年美食</span></a></li>
+        <li><a href="../html/news.html"><span>新闻动态</span><span class="hov">新闻动态</span></a></li>
+        <li><a href="../html/brand.html"><span>品牌战略</span><span class="hov">品牌战略</span></a></li>
+        <li><a href="../html/delicious.html"><span>美味活动</span><span class="hov">美味活动</span></a></li>
+        <li><a href="../html/vip.html"><span>会员中心</span><span class="hov">会员中心</span></a></li>
+        <li><a href="../html/join.html"><span>加入我们</span><span class="hov">加入我们</span></a></li>
+        <li><a href="../html/contact.html"><span>联系我们</span><span class="hov">联系我们</span></a></li>
+        </ul>
+        <div class="burger">
+            <div class="top_line"></div>
+            <div class="middle_line"></div>
+            <div class="bottom_line"></div>
+        </div>
+        <div class="nav_right">
+            <div class=" magnifying "> <img src="../img/search_icon.png"></div>
+            <div class="change"><a href="">EN</a></div>
+        </div>
+        <div class="search">
+            <div class="left">
+                <div class="search_cli">
+                </div>
+                <i>×</i>
+                <form action="">
+                    <input type="text" placeholder="Serach..." id="key">
+                    <input type="button">
+                </form>
+            </div>
+            <div class="right"></div>
+        </div>
+    </nav>
+    <header></header>
+    <!-- banner -->
+    <div class="banner1">
+        <img src="../img/118272.jpg">
+    </div>
+    <!-- content -->
+    <!-- nav2 -->
+    <div class="nav2">
+        <div class="content">
+            <ul>
+                <li><a href="">集团总部</a></li>
+                <li><a href="">门店查询</a></li>
+                <li><a href="" class="cur1">招贤纳士</a></li>
+            </ul>
+            <div class="mianbao">
+                <p>首页 < 联系我们</p> </div> </div> </div> <div class="sign">
+                        <div class="content">
+                            <div class="tit1">
+                                <p>集团总部<br> <span style="font-size: 12px;">GROUP HEADQUARTERS</span></p>
+
+                            </div>
+
+                            <div style="width:100%;height:550px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+    <p style="color:red;font-weight:600">
+      <a href="http://developer.baidu.com/map/index.php?title=jspopular/guide/introduction" style="color:#2f83c7" target="_blank"></a>
+      <a href="http://lbsyun.baidu.com/apiconsole/key?application=key" style="color:#2f83c7" target="_blank"></a>
+    </p>
+  </body>
+  <script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(116.523039,39.930138),15);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"我的备注",title:"我的标记",imageOffset: {width:0,height:3},position:{lat:39.931134,lng:116.520811}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+      initMap();
+  </script>
+
+
+                            <div class="tit1">
+                                <p>门店查询<br> <span style="font-size: 12px;">RETAIL STORE</span></p>
+
+                            </div>
+                            <div class="city">
+                                <ul>
+                                    <li><a href="" class="cur">北京区域</a></li>
+                                    <li><a href="">上海区域</a></li>
+                                    <li><a href="">天津区域</a></li>
+                                    <li><a href="">合肥区域</a></li>
+                                    <li><a href="">南京区域</a></li>
+                                </ul>
+                            </div>
+                            <div class="change1">
+                                选择区域：<select style="padding:5px 15px;">
+                                    <option value="全部区域"><a href="">全部区域</a></option>
+                                    <option value=""><a href="">丰台区</a></option>
+                                    <option value=""><a href="">宣武区</a></option>
+                                    <option value=""><a href="">大兴区</a></option>
+                                    <option value=""><a href="">昌平区</a></option>
+                                    <option value=""><a href="">海淀区</a></option>
+                                    <option value=""><a href="">通州区</a></option>
+                                </select>
+                            </div>
+                            <div class="address">
+                                <div class="dec2">
+                                    <a href="">
+                                        <p>青石牛怡海花园店（即将开业）</p><br>
+                                        <span>北京市丰台区怡海花园恒丰园7号楼二层2号</span>
+                                    </a>
+                                </div>
+                                <div class="dec2">
+                                    <a href="">
+                                        <p>青石牛怡海花园店（即将开业）</p><br>
+                                        <span>北京市丰台区怡海花园恒丰园7号楼二层2号</span>
+                                    </a>
+                                </div>
+                                <div class="dec2">
+                                    <a href="">
+                                        <p>青石牛怡海花园店（即将开业）</p><br>
+                                        <span>北京市丰台区怡海花园恒丰园7号楼二层2号</span>
+                                    </a>
+                                </div>
+                                <div class="dec2">
+                                    <a href="">
+                                        <p>青石牛怡海花园店（即将开业）</p><br>
+                                        <span>北京市丰台区怡海花园恒丰园7号楼二层2号</span>
+                                    </a>
+                                </div>
+                                <div class="dec2">
+                                    <a href="">
+                                        <p>青石牛怡海花园店（即将开业）</p><br>
+                                        <span>北京市丰台区怡海花园恒丰园7号楼二层2号</span>
+                                    </a>
+                                </div>
+                                <div class="dec2">
+                                    <a href="">
+                                        <p>青石牛怡海花园店（即将开业）</p><br>
+                                        <span>北京市丰台区怡海花园恒丰园7号楼二层2号</span>
+                                    </a>
+                                </div>
+                                <div class="dec2">
+                                    <a href="">
+                                        <p>青石牛怡海花园店（即将开业）</p><br>
+                                        <span>北京市丰台区怡海花园恒丰园7号楼二层2号</span>
+                                    </a>
+                                </div>
+                                <div class="dec2">
+                                    <a href="">
+                                        <p>青石牛怡海花园店（即将开业）</p><br>
+                                        <span>北京市丰台区怡海花园恒丰园7号楼二层2号</span>
+                                    </a>
+                                </div>
+                                 <div class="dec2">
+                                    <a href="">
+                                        <p>青石牛怡海花园店（即将开业）</p><br>
+                                        <span>北京市丰台区怡海花园恒丰园7号楼二层2号</span>
+                                    </a>
+                                </div>
+                                <div class="dec2">
+                                    <a href="">
+                                        <p>青石牛怡海花园店（即将开业）</p><br>
+                                        <span>北京市丰台区怡海花园恒丰园7号楼二层2号</span>
+                                    </a>
+                                </div> <div class="dec2">
+                                    <a href="">
+                                        <p>青石牛怡海花园店（即将开业）</p><br>
+                                        <span>北京市丰台区怡海花园恒丰园7号楼二层2号</span>
+                                    </a>
+                                </div>
+                                <div class="dec2">
+                                    <a href="">
+                                        <p>青石牛怡海花园店（即将开业）</p><br>
+                                        <span>北京市丰台区怡海花园恒丰园7号楼二层2号</span>
+                                    </a>
+                                </div>
+                                <div class="dec2">
+                                    <a href="">
+                                        <p>青石牛怡海花园店（即将开业）</p><br>
+                                        <span>北京市丰台区怡海花园恒丰园7号楼二层2号</span>
+                                    </a>
+                                </div>
+                                <div class="dec2">
+                                    <a href="">
+                                        <p>青石牛怡海花园店（即将开业）</p><br>
+                                        <span>北京市丰台区怡海花园恒丰园7号楼二层2号</span>
+                                    </a>
+                                </div>
+                                <div class="dec2">
+                                    <a href="">
+                                        <p>青石牛怡海花园店（即将开业）</p><br>
+                                        <span>北京市丰台区怡海花园恒丰园7号楼二层2号</span>
+                                    </a>
+                                </div>
+                                <div class="dec2">
+                                    <a href="">
+                                        <p>青石牛怡海花园店（即将开业）</p><br>
+                                        <span>北京市丰台区怡海花园恒丰园7号楼二层2号</span>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+            </div>
+            <!-- fooetr -->
+            <div class="fooetr">
+                <div class="content">
+                    <ul>
+                        <li><a href="">
+                                <h5>走进青年</h5>
+                            </a></li>
+
+                        <li><a href="">青年简介</a></li>
+                        <li><a href="">青年文化</a></li>
+                        <li><a href="">大事记</a></li>
+                        <li><a href="">企业荣誉</a></li>
+
+                    </ul>
+                    <ul>
+                        <li><a href="">
+                                <h5>青年美食</h5>
+                            </a></li>
+
+                        <li><a href="">招牌美食</a></li>
+                        <li><a href="">经典菜系</a></li>
+                        <li><a href="">健康饮品</a></li>
+                        <!-- <li><a href="">企业荣誉</a></li> -->
+
+                    </ul>
+                    <ul>
+                        <li><a href="">
+                                <h5>新闻动态</h5>
+                            </a></li>
+
+                        <li><a href="">新闻展播</a></li>
+                        <li><a href="">集团视频</a></li>
+
+                    </ul>
+                    <ul>
+                        <li><a href="">
+                                <h5>品牌战略</h5>
+                            </a></li>
+
+                        <li><a href="">青年餐厅</a></li>
+                        <li><a href="">青年公社</a></li>
+                        <li><a href="">老墙根涮肉</a></li>
+                        <li><a href="">易宴</a></li>
+                        <li><a href="">新嘉诚</a></li>
+                        <li><a href="">好多家</a></li>
+                        <li><a href="">青石牛</a></li>
+
+                    </ul>
+                    <ul>
+                        <li><a href="">
+                                <h5>美味活动</h5>
+                            </a></li>
+
+
+                    </ul>
+                    <ul>
+                        <li><a href="">
+                                <h5>会员中心</h5>
+                            </a></li>
+
+                        <li><a href="">会员活动</a></li>
+                        <li><a href="">会员查询</a></li>
+                        <li><a href="">外卖信息</a></li>
+
+
+                    </ul>
+                    <ul>
+                        <li><a href="">
+                                <h5>联系我们</h5>
+                            </a></li>
+
+                        <li><a href="">集团总部</a></li>
+                        <li><a href="">门店查询</a></li>
+                        <li><a href="">招贤纳士</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class="fot">
+                <div class="content">
+                    <p>Copyright © 2017 北京新世纪青年餐饮管理有限公司 版权所有 <img src="../img/pic.gif"> </p>
+                    <div class="link">
+                        <a href="">法律法规</a>&nbsp;<span>|</span>
+                        <a href="">隐私声明</a>&nbsp;<span>|</span>
+                        <a href="">联系我们</a>&nbsp;<span>|</span>
+                        <a href="">友情链接</a>&nbsp;<span>|</span>
+
+                    </div>
+                    <div class="share">
+                        <a href=""><img src="../img/wx.png">
+                            <div class="fot_hov"><img src="../img/fot_hov.jpg"></div>
+                        </a>
+                        <a href=""><img src="../img/wb.png"> </a>
+                    </div>
+                </div>
+            </div>
+            <script src="../js/jquery.js"></script>
+            <script src="../js/index.js"></script>
+            <script src="../js/appro.js"></script>
+            <script src="../js/join.js"></script>
+</body>
+
+</html>

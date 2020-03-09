@@ -1,0 +1,88 @@
+.chid{
+    width: 100%;
+overflow: hidden;
+margin-bottom: 20px;
+}
+.chid img{
+    width: 100%;
+}
+.chid:nth-child(even) .left{
+float: right;
+}
+.chid:nth-child(even) .right{
+    float: left;
+
+}
+.chid .left{
+    width: 50%;
+    float: left;
+ 
+}
+.chid:last-child .left img{
+    height: 415px;
+}
+.chid .left img{
+    min-width: 100%;
+    vertical-align: middle;
+}
+.content{
+    padding-top: 50px;
+}
+.chid .right{
+    /* background: url(../img/activity_bg.jpg) no-repeat center center; */
+    position: relative;
+    width: 50%;
+    float: right;
+
+}
+/* .chid .left ,.chid .right{
+    float: left;
+} */
+.chid .right p{
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    font-size: 18px;
+    color: #fff;
+}
+.chid .right .midle{
+    position: absolute;
+    left: 0;
+    top: 30%;
+    padding: 0 70px;
+}
+.chid .right .midle h4 a{
+    color: #fff;
+    font-size: 22px;
+    font-weight: normal;
+    position: relative;
+}
+.chid .right .midle h4 a::after{
+    position: absolute;
+    content: '';
+    bottom: 10px;
+    right: -35px;
+    width: 28px;
+    height: 15px;
+    background: url(../img/hot.png) no-repeat;
+}
+.move{
+    border: 1px solid #fff;
+    width: 109px;
+    height: 33px;
+    text-align: center;
+    line-height: 33px;
+    color: #fff;
+    display: block;
+    border-radius: 3px;
+}.info{
+    line-height: 30px;
+    color: #fff;
+    margin: 10px 0;
+    height: 90px;
+    overflow: hidden;
+}
+.chid>.right>.midle>a:hover{
+    background-color: #b20000;
+    border: 1px solid #b20000;
+}
