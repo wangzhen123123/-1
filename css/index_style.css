@@ -196,4 +196,35 @@
         margin: 0 auto;
         overflow: hidden;
     }
+    .fot>.content {
+      width: 100%;
+    }
+    .fod_con ul li {
+        float: left;
+        width: 25%;
+        height: 180px;
+        position: relative;
+    }
+    .fo_inf {
+        padding: 50px;
+        background-color: #000;
+        color: #fff;
+        height: 100%;
+        text-align: center;
+        padding: 20px 30px;
+    }
+}
+@media screen and (max-width:800px){
+    .tit>.move {
+       display: none;
+    }
+    .sp {
+        display: none;
+        position: absolute;
+        bottom: 20px;
+        right: 150px;
+        width: 70px;
+        height: 20px;
+        z-index: 5;
+    }
 }

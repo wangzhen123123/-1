@@ -1,17 +1,18 @@
 $(document).ready(function () {
     $('.magnifying').click(function () {
-        console.log(123)
+        // console.log(123)
         $('.search').css({ "display": "block" })
     })
     $('.left').children('i').click(function () {
-        console.log(123)
+        // console.log(123)
         $('.search').css({ "display": "none" })
     })
     $(".burger").click(function () {
         $('nav_menu').children("li")
     })
+
     $(".one_hov").hover(function () {
-        console.log(123)
+        // console.log(123)
         $(this).children('.bg_').css({ "opacity": "0" })
         $(this).children('.but').children().children().css({ "width": "50%" })
     }, function () {
@@ -19,7 +20,7 @@ $(document).ready(function () {
         $('.but').children().children().css({ "width": "0%" })
     })
     $(".tow_hov").hover(function () {
-        console.log(123)
+        // console.log(123)
         $(this).children('.bg_').css({ "opacity": "0" })
         $(this).children('.but').children().children().css({ "width": "50%" })
     }, function () {
@@ -27,7 +28,7 @@ $(document).ready(function () {
         $('.but').children().children().css({ "width": "0%" })
     })
     $(".three_hov").hover(function () {
-        console.log(123)
+        // console.log(123)
         $(this).children('.bg_').css({ "opacity": "0" })
         $(this).children('.but').children().children().css({ "width": "50%" })
     }, function () {
@@ -35,7 +36,7 @@ $(document).ready(function () {
         $('.but').children().children().css({ "width": "0%" })
     })
     $(".four_hov").hover(function () {
-        console.log(123)
+        // console.log(123)
         $(this).children('.bg_').css({ "opacity": "0" })
         $(this).children('.but').children().children().css({ "width": "50%" })
     }, function () {
@@ -43,7 +44,7 @@ $(document).ready(function () {
         $('.but').children().children().css({ "width": "0%" })
     })
     $(".five_hov").hover(function () {
-        console.log(123)
+        // console.log(123)
         $(this).children('.bg_').css({ "opacity": "0" })
         $(this).children('.but').children().children().css({ "width": "50%" })
     }, function () {
@@ -51,7 +52,7 @@ $(document).ready(function () {
         $('.but').children().children().css({ "width": "0%" })
     })
     $(".six_hov").hover(function () {
-        console.log(123)
+        // console.log(123)
         $(this).children('.bg_').css({ "opacity": "0" })
         $(this).children('.but').children().children().css({ "width": "50%" })
     }, function () {
@@ -76,6 +77,56 @@ $(document).ready(function () {
         $(this).children('img').css({ "transform": "scale(1.0)" })
         $(this).children('.img_tit').children('.move').children('i').removeClass('rot')
         $(this).children('a').children('.one1').children('.tit').children('.move').children('span').css({ "color": "#97938f" })
+    })
+    var i = 0;
+    var timer;
+    bann()
+    function bann() {
+        timer = setInterval(function () {
+            i++;
+            if (i == 3) {
+                i = 0;
+            }
+            show()
+        }, 2000)
+        function show() {
+            $(".show").children().eq(i).css({ "opacity": "1" }).siblings().css({ "opacity": "0" })
+            $(".in_show").children().eq(i).css({ "opacity": "1" }).siblings().css({ "opacity": "0" })
+            $(".sp").children().eq(i).css({ "background": "#fff" }).siblings().css({ "background": "" })
+            $()
+        }
+    }
+    // $(window).scroll(function () {
+    //     
+    // })
+    $(window).scroll(function () {
+        var winhe = parseInt($(window).height())
+        var dovu = parseInt($(document).height())
+        console.log(dovu)
+        // console.log( $(window).scrollTop()+winhe)
+        // console.log(dovu)
+        if (($(window).scrollTop() < 500)) {
+            $(".fix_right").css({ "opacity": "0" })
+        }
+        if ($(window).scrollTop() > 500) {
+            $(".fix_right").css({ "opacity": "1" })
+        } if ($(window).scrollTop() + winhe == dovu) {
+            var hh = $(".fooetr").children(".content").children("ul")
+            for (var l = 0; l < hh.length; l++) {
+                var kk = l * 0.2 + 0.3;
+                if (hh[l].style.animation) {
+                    hh[l].style.animation = ""
+                }else{
+                    hh[l].style.animation = " 1s fot ease-in forwards " + kk + "s ";
+                }
+            }
+
+        }
+
+    })
+    $(".fix_right").on("click", function () {
+        //   $("body").scrollTop(0)
+        $('html,body').animate({ scrollTop: '0px' }, 2000);
     })
 })
 const burger = document.querySelector(".burger")
